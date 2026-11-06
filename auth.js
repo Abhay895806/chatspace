@@ -75,11 +75,10 @@ function makeToken() {
 function hashToken(token) {
   return crypto.createHash("sha256").update(token).digest("hex");
 }
-
 function baseUrl() {
-  return (process.env.BASE_URL || "http://localhost:3000").replace(/\/$/, "");
+  return (process.env.BASE_URL ||
+    "https://chatspace-5rs3.onrender.com").replace(/\/$/, "");
 }
-
 function sendEmail(to, subject, text) {
   return transporter.sendMail({
     from: process.env.SMTP_USER,
